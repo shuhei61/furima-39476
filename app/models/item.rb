@@ -13,5 +13,12 @@ class Item < ApplicationRecord
   validates :shipday_id, numericality: { other_than: 1 }
 
   belongs_to :user
-  
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
+  belongs_to :state
+  belongs_to :shipcharge
+  belongs_to :prefecture
+  belongs_to :shipday
+
 end
