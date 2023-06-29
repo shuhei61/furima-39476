@@ -1,12 +1,12 @@
 class Item < ApplicationRecord
 
   with_options presence: true do
-    validates :nickname
+    validates :name
     validates :description
     validates :price, format: {with: /\A[3-9]\d{2,6}\Z/, message: "Price is out of setting range"}
   end
 
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { other_than: 1 , message: "can't be blank" } do
     validates :category_id
     validates :state_id
     validates :shipcharge_id
