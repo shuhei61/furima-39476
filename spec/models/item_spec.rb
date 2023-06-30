@@ -16,7 +16,7 @@ RSpec.describe Item, type: :model do
       it '商品画像を1枚つけることが必須である' do
         @item.image = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Image can't be blank")        
+        expect(@item.errors.full_messages).to include("Image can't be blank")
       end
       it '商品名が必須である' do
         @item.name = ''
@@ -66,17 +66,17 @@ RSpec.describe Item, type: :model do
       it '価格は、¥300より小さい値では保存できない' do
         @item.price = '299'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is out of setting range")
+        expect(@item.errors.full_messages).to include('Price is out of setting range')
       end
       it '価格は、¥9,999,999より大きい値では保存できない' do
         @item.price = '10000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is out of setting range")
+        expect(@item.errors.full_messages).to include('Price is out of setting range')
       end
       it '価格は半角数値のみ保存できる' do
         @item.price = '５００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid. Input half-width characters")
+        expect(@item.errors.full_messages).to include('Price is invalid. Input half-width characters')
       end
     end
   end
