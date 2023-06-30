@@ -5,7 +5,7 @@ const calculation = ()=>{
   price_locate.addEventListener("input",()=>{
     var price = document.getElementById("item-price").value;
     price = Number(price);
-    const tax_price = price * 0.1 ;
+    const tax_price = Math.floor(price * 0.1);
     const profit = price - tax_price ;
     tax_price_locate.innerHTML = tax_price;
     profit_locate.innerHTML = profit;
