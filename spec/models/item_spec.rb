@@ -28,33 +28,28 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Description can't be blank")
       end
-      it 'カテゴリーの情報が必須である' do
-        @item.category_id = ''
+      it 'カテゴリーに「---」が選択されている場合は出品できない' do
+        @item.category_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
-      it '商品名が必須である' do
-        @item.name = ''
-        @item.valid?
-        expect(@item.errors.full_messages).to include("Name can't be blank")
-      end
-      it '商品の状態が必須である' do
-        @item.state_id = ''
+      it '商品の状態に「---」が選択されている場合は出品できない' do
+        @item.state_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("State can't be blank")
       end
-      it '配送料の負担の情報が必須である' do
-        @item.shipcharge_id = ''
+      it '配送料の負担に「---」が選択されている場合は出品できない' do
+        @item.shipcharge_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipcharge can't be blank")
       end
-      it '発送元の地域の情報が必須である' do
-        @item.prefecture_id = ''
+      it '発送元の地域に「---」が選択されている場合は出品できない' do
+        @item.prefecture_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture can't be blank")
       end
-      it '発送までの日数の情報が必須である' do
-        @item.shipday_id = ''
+      it '発送までの日数に「---」が選択されている場合は出品できない' do
+        @item.shipday_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipday can't be blank")
       end
@@ -77,6 +72,11 @@ RSpec.describe Item, type: :model do
         @item.price = '５００'
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is invalid. Input half-width characters')
+      end
+      it 'userが紐付いていなければ出品できない' do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include('User must exist')
       end
     end
   end
