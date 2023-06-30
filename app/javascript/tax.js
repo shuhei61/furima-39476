@@ -3,7 +3,7 @@ const calculation = ()=>{
   const tax_price_locate = document.getElementById("add-tax-price");
   const profit_locate = document.getElementById("profit");
   price_locate.addEventListener("input",()=>{
-    var price = document.getElementById("item-price").value;
+    var price = price_locate.value;
     price = Number(price);
     const tax_price = Math.floor(price * 0.1);
     const profit = price - tax_price ;
@@ -13,4 +13,4 @@ const calculation = ()=>{
 
 };
 
-window.addEventListener("load",calculation);
+document.addEventListener("turbo:load",calculation);
