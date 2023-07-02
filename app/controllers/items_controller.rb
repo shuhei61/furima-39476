@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to "/"
+    redirect_to '/'
   end
 
   def update
@@ -54,6 +54,7 @@ class ItemsController < ApplicationController
 
   def move_to_index
     return if current_user.id == @item.user.id
+
     redirect_to '/'
   end
 
