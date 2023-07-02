@@ -1,8 +1,8 @@
-class OrderAddress（先頭大文字）
+class OrderAddress
   include ActiveModel::Model
   attr_accessor :user_id, :item_id, :post_code, :prefecture_id, :municipalities, :house_number, :building_name, :phone_number, :order_id
 
-  with_options presence: ture do
+  with_options presence: true do
     validates :user_id
     validates :item_id
     validates :post_code
@@ -10,7 +10,7 @@ class OrderAddress（先頭大文字）
     validates :municipalities
     validates :house_number
     validates :building_name
-    validates :validates :phone_number, format: { with: /\A\d+\Z/, message: 'is invalid. Input only number.' }
+    validates :phone_number, format: { with: /\A\d+\Z/, message: 'is invalid. Input only number.' }
     validates :order_id
   end
 
