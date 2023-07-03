@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
 
+  before_action :move_to_session, only: [:index]
+  before_action :move_to_root, only: [:index]
+
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
     @order_address = OrderAddress.new
@@ -32,4 +35,20 @@ class OrdersController < ApplicationController
     currency: 'jpy'
     )
   end
+
+  def move_to_session
+    return if user_signed_in?
+
+    redirect_to new_user_session_path
+  end
+
+  def move_to_root
+    @item = Item.find(params[:item_id])
+    if current_user.id == @item.user.id
+      redirect_to "/"
+    elsif @item.order.present?
+      redirect_to "/"
+    end
+  end
+
 end
