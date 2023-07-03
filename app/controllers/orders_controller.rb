@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    gon.public_key = ENV['PAYJP_PUBLIC_KEY']
     @order_address = OrderAddress.new(create_orderaddress_params)
     if @order_address.valid?
       pay_item
