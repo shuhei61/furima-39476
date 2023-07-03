@@ -13,4 +13,4 @@ const calculation = ()=>{
 
 };
 
-document.addEventListener("turbo:load",calculation);
+window.addEventListener("turbo:load",calculation);
