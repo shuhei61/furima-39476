@@ -9,12 +9,11 @@ class OrderAddress
     validates :prefecture_id
     validates :municipalities
     validates :house_number
-    validates :building_name
     validates :phone_number, format: { with: /\A\d+\Z/, message: 'is invalid. Input only number.' }
     validates :order_id
   end
 
-  validates :phone_number, length: { minimum: 10, maximum: 11 }
+  #validates :phone_number, length: { minimum: 10, maximum: 11 }
   validate :phone_length_judge
 
   with_options numericality: { other_than: 1, message: "can't be blank" } do
@@ -22,10 +21,10 @@ class OrderAddress
   end
 
   def phone_length_judge
-    if phone_number.present? && phone_number.length < 10
-      errors.add(:phone_number, 'Phone number is too short')
-    elsif phone_number.present? && phone_number.length > 11
-      errors.add(:phone_number, 'Phone number is too long')
+    if phone_number.length < 10
+      errors.add(:phone_number, 'is too short')
+    elsif phone_number.length > 11
+      errors.add(:phone_number, 'is too long')
     end
   end
 
