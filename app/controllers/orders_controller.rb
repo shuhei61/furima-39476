@@ -53,5 +53,4 @@ class OrdersController < ApplicationController
   def find_item
     @item = Item.find(params[:item_id])
   end
-
 end
