@@ -4,14 +4,13 @@ class OrderAddress
 
   with_options presence: true do
     validates :token
-    validates :user_id, format: { message: 'must exist.' }
-    validates :item_id, format: { message: 'must exist.' }
+    validates :user_id
+    validates :item_id
     validates :post_code
     validates :prefecture_id
     validates :municipalities
     validates :house_number
     validates :phone_number, format: { with: /\A\d+\Z/, message: 'is invalid. Input only number.' }
-    validates :order_id, format: { message: 'must exist.' }
   end
 
   #validates :phone_number, length: { minimum: 10, maximum: 11 }
@@ -31,6 +30,6 @@ class OrderAddress
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
-    Address.create(post_code: post_code, prefecture_id: prefecture_id, municipalities: municipalities,house_number: house_number, building_name: building_name, phone_number: phone_number, order_id: order_id )
+    Address.create(post_code: post_code, prefecture_id: prefecture_id, municipalities: municipalities,house_number: house_number, building_name: building_name, phone_number: phone_number, order_id: order.id )
   end
 end
