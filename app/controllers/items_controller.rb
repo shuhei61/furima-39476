@@ -53,12 +53,10 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    unless current_user.id == @item.user.id
-      redirect_to '/'
-    end
-    if @item.order.present?
-      redirect_to '/'
-    end
+    redirect_to '/' unless current_user.id == @item.user.id
+    return unless @item.order.present?
+
+    redirect_to '/'
   end
 
   def find_item
