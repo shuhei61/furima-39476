@@ -3,14 +3,15 @@ class OrderAddress
   attr_accessor :user_id, :item_id, :post_code, :prefecture_id, :municipalities, :house_number, :building_name, :phone_number, :order_id, :token
 
   with_options presence: true do
-    validates :user_id
-    validates :item_id
+    validates :token
+    validates :user_id, format: { message: 'must exist.' }
+    validates :item_id, format: { message: 'must exist.' }
     validates :post_code
     validates :prefecture_id
     validates :municipalities
     validates :house_number
     validates :phone_number, format: { with: /\A\d+\Z/, message: 'is invalid. Input only number.' }
-    validates :order_id
+    validates :order_id, format: { message: 'must exist.' }
   end
 
   #validates :phone_number, length: { minimum: 10, maximum: 11 }

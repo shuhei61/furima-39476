@@ -3,15 +3,18 @@ class OrdersController < ApplicationController
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
     @order_address = OrderAddress.new
+    @item = Item.find(params[:item_id])
   end
 
   def create
+    @item = Item.find(params[:item_id])
     @order_address = OrderAddress.new(create_orderaddress_params)
     if @order_address.valid?
       Payjp::Charge.create(
         amount: order_params[:price],  # 商品の値段
         card: order_params[:token],
-        currency: 'jpy'                 # 通貨の種類（日本円）)
+        currency: 'jpy'                 # 通貨の種類（日本円）
+      )
       @order_address.save
       redirect_to "/"
     else
