@@ -1,0 +1,18 @@
+current directory: /home/shuhei/projects/furima-39476/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+/home/shuhei/.rbenv/versions/3.2.0/bin/ruby -I /home/shuhei/.rbenv/versions/3.2.0/lib/ruby/3.2.0 extconf.rb
+creating Makefile
+
+current directory: /home/shuhei/projects/furima-39476/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230707-11100-5tgazz sitelibdir\=./.gem.20230707-11100-5tgazz clean
+
+current directory: /home/shuhei/projects/furima-39476/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230707-11100-5tgazz sitelibdir\=./.gem.20230707-11100-5tgazz
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/shuhei/projects/furima-39476/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230707-11100-5tgazz sitelibdir\=./.gem.20230707-11100-5tgazz install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20230707-11100-5tgazz/bootsnap
+
+current directory: /home/shuhei/projects/furima-39476/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230707-11100-5tgazz sitelibdir\=./.gem.20230707-11100-5tgazz clean

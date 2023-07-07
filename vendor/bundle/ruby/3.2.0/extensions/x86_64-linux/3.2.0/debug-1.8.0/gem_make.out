@@ -1,0 +1,19 @@
+current directory: /home/shuhei/projects/furima-39476/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+/home/shuhei/.rbenv/versions/3.2.0/bin/ruby -I /home/shuhei/.rbenv/versions/3.2.0/lib/ruby/3.2.0 extconf.rb
+creating Makefile
+
+current directory: /home/shuhei/projects/furima-39476/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230707-11100-8obgz6 sitelibdir\=./.gem.20230707-11100-8obgz6 clean
+
+current directory: /home/shuhei/projects/furima-39476/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230707-11100-8obgz6 sitelibdir\=./.gem.20230707-11100-8obgz6
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/shuhei/projects/furima-39476/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230707-11100-8obgz6 sitelibdir\=./.gem.20230707-11100-8obgz6 install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20230707-11100-8obgz6/debug
+
+current directory: /home/shuhei/projects/furima-39476/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230707-11100-8obgz6 sitelibdir\=./.gem.20230707-11100-8obgz6 clean
